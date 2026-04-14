@@ -1,0 +1,226 @@
+import type { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { SectionHeader } from "@/components/section-header"
+import { siteConfig, locations } from "@/lib/data"
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Baadalo Pe Rasoi. Send us feedback, ask about bulk orders, or connect with us on Instagram.",
+  openGraph: {
+    title: "Contact | Baadalo Pe Rasoi",
+    description:
+      "Get in touch with Baadalo Pe Rasoi. Feedback, bulk orders, or just say hi.",
+    url: `${siteConfig.url}/contact`,
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Baadalo Pe Rasoi",
+    description:
+      "Get in touch with Baadalo Pe Rasoi. Feedback, bulk orders, or just say hi.",
+  },
+  alternates: { canonical: `${siteConfig.url}/contact` },
+}
+
+export default function ContactPage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-primary py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Contact Us
+          </p>
+          <h1 className="max-w-3xl font-serif text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
+            We Would Love to Hear From You
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
+            Have feedback, a bulk order enquiry, or just want to say hello?
+            Drop us a message and we will get back to you soon.
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="bg-background py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="grid gap-16 lg:grid-cols-5">
+            {/* Contact Form */}
+            <div className="lg:col-span-3">
+              <h2 className="font-serif text-2xl font-bold text-foreground">
+                Send Us a Message
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Fill out the form below and we will get back to you within 24
+                hours.
+              </p>
+              <form className="mt-8 flex flex-col gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="firstName">First Name</Label>
+                    <Input id="firstName" placeholder="Maria" required />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="lastName">Last Name</Label>
+                    <Input id="lastName" placeholder="Rossi" required />
+                  </div>
+                </div>
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="maria@example.com"
+                      required
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input
+                    id="subject"
+                    placeholder="Reservation inquiry, private event, feedback..."
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Tell us how we can help..."
+                    className="min-h-[120px]"
+                    required
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90 md:w-auto"
+                >
+                  Send Message
+                </Button>
+              </form>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-2">
+              <div className="rounded-lg border border-border bg-card p-6">
+                <h3 className="font-serif text-lg font-bold text-card-foreground">
+                  General Inquiries
+                </h3>
+                <div className="mt-4 flex flex-col gap-3">
+                  <a
+                    href={`tel:${siteConfig.phone}`}
+                    className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-accent"
+                  >
+                    <Phone className="size-4 shrink-0 text-accent" />
+                    {siteConfig.phone}
+                  </a>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-accent"
+                  >
+                    <Mail className="size-4 shrink-0 text-accent" />
+                    {siteConfig.email}
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-col gap-4">
+                {locations.map((loc) => (
+                  <Link
+                    key={loc.slug}
+                    href={`/locations/${loc.slug}`}
+                    className="group rounded-lg border border-border bg-card p-6 transition-shadow hover:shadow-md"
+                  >
+                    <h3 className="font-serif text-lg font-bold text-card-foreground group-hover:text-accent">
+                      {loc.shortName}
+                    </h3>
+                    <div className="mt-3 flex flex-col gap-2">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
+                        <span className="text-sm text-muted-foreground">
+                          {loc.address}, {loc.city}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Phone className="size-4 shrink-0 text-accent" />
+                        <span className="text-sm text-muted-foreground">
+                          {loc.phone}
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Clock className="mt-0.5 size-4 shrink-0 text-accent" />
+                        <div className="flex flex-col gap-0.5">
+                          {loc.hours.map((h) => (
+                            <span
+                              key={h.days}
+                              className="text-xs text-muted-foreground"
+                            >
+                              {h.days}: {h.time}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map placeholder */}
+      <section className="bg-secondary py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeader
+            label="Order Online"
+            title="Find Us on Zomato & Swiggy"
+            description="We deliver across the Katraj–Kondhwa belt in Pune. Open for lunch, dinner, and late-night orders every day."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {locations.map((loc) => (
+              <div
+                key={loc.slug}
+                className="relative overflow-hidden rounded-lg"
+              >
+                <div className="relative aspect-video overflow-hidden rounded-lg">
+                  <Image
+                    src={loc.image}
+                    alt={`Map area for ${loc.name}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-primary/60" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                    <MapPin className="mb-2 size-6 text-accent" />
+                    <h3 className="font-serif text-lg font-bold text-primary-foreground">
+                      {loc.shortName}
+                    </h3>
+                    <p className="mt-1 text-xs text-primary-foreground/70">
+                      {loc.address}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
