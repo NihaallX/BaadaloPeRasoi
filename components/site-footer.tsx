@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MapPin, Phone, Mail } from "lucide-react"
+import { Phone, Mail } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig, locations } from "@/lib/data"
 
@@ -8,17 +8,17 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 py-14 lg:px-8 lg:py-16">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.6fr)_minmax(0,1.2fr)] lg:gap-x-8 lg:gap-y-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="font-serif text-2xl font-bold">
               {siteConfig.name}
             </Link>
-            <p className="mt-4 text-sm leading-relaxed opacity-80">
+            <p className="mt-3 text-sm leading-relaxed opacity-80">
               {siteConfig.description}
             </p>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-5 flex gap-4">
               <a
                 href={siteConfig.socials.instagram}
                 target="_blank"
@@ -34,62 +34,58 @@ export function SiteFooter() {
             <p className="mt-3 text-xs opacity-70">@baadalo_pe_rasoi</p>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider">
-              Navigate
-            </h3>
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {[
-                { name: "Our Story", href: "/about" },
-                { name: "The Team", href: "/team" },
-                { name: "Locations", href: "/locations" },
-                { name: "Full Menu", href: "/menu" },
-                { name: "Contact", href: "/contact" },
-              ].map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-sm opacity-70 transition-opacity hover:opacity-100"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:gap-6">
+            {/* Navigation */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider">
+                Navigate
+              </h3>
+              <ul className="mt-3 flex flex-col gap-2">
+                {[
+                  { name: "Our Story", href: "/about" },
+                  { name: "The Team", href: "/team" },
+                  { name: "Locations", href: "/locations" },
+                  { name: "Full Menu", href: "/menu" },
+                  { name: "Contact", href: "/contact" },
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-sm opacity-70 transition-opacity hover:opacity-100"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Locations */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider">
-              Menu
-            </h3>
-            <ul className="mt-4 flex flex-col gap-4">
-              {locations.map((loc) => (
-                <li key={loc.slug}>
-                  <Link
-                    href={`/locations/${loc.slug}`}
-                    className="group flex items-start gap-2"
-                  >
-                    <MapPin className="mt-0.5 size-4 shrink-0 opacity-50 transition-opacity group-hover:opacity-100" />
-                    <div>
-                      <p className="text-sm font-medium opacity-90 transition-opacity group-hover:opacity-100">
-                        {loc.shortName}
-                      </p>
-                      <p className="text-xs opacity-60">{loc.address}</p>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Menu Categories */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider">
+                Menu Categories
+              </h3>
+              <ul className="mt-3 flex flex-col gap-2">
+                {locations.map((loc) => (
+                  <li key={loc.slug}>
+                    <Link
+                      href={`/locations/${loc.slug}`}
+                      className="text-sm opacity-70 transition-opacity hover:opacity-100"
+                    >
+                      {loc.shortName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="md:col-span-2 lg:col-span-1">
             <h3 className="text-sm font-semibold uppercase tracking-wider">
               Get in Touch
             </h3>
-            <ul className="mt-4 flex flex-col gap-3">
+            <ul className="mt-3 flex flex-col gap-2.5">
               <li>
                 <a
                   href={`tel:${siteConfig.phone}`}
@@ -116,7 +112,7 @@ export function SiteFooter() {
                 )}
               </li>
             </ul>
-            <div className="mt-6">
+            <div className="mt-5">
               <p className="text-xs font-medium uppercase tracking-wider opacity-60">
                 Order Online
               </p>
@@ -127,21 +123,43 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <Separator className="my-10 bg-primary-foreground/15" />
+        <Separator className="my-8 bg-primary-foreground/15" />
 
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-xs opacity-50">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. Pure Veg | Delivery Only | Pune
-          </p>
-          <div className="flex gap-6">
+        <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
+          <div className="text-center md:text-left">
+            <p className="text-xs opacity-50">
+              &copy; {new Date().getFullYear()} {siteConfig.name}. Pure Veg | Delivery Only | Pune
+            </p>
+            <p className="mt-1 text-xs opacity-50">
+              Created and managed by{" "}
+              <a
+                href="https://www.linkedin.com/in/nihaallp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-2 transition-opacity hover:opacity-100 hover:underline"
+              >
+                Nihal Pardeshi
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://www.linkedin.com/in/gaurav-guddeti-a2359827b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-2 transition-opacity hover:opacity-100 hover:underline"
+              >
+                Gaurav Guddeti
+              </a>
+            </p>
+          </div>
+          <div className="flex gap-4">
             <Link
-              href="/contact"
+              href="/privacy-policy"
               className="text-xs opacity-50 transition-opacity hover:opacity-100"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/contact"
+              href="/terms-of-service"
               className="text-xs opacity-50 transition-opacity hover:opacity-100"
             >
               Terms of Service

@@ -31,6 +31,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const hasEmail = siteConfig.email.includes("@")
+  const primaryLocation = locations[0]
+  const operatingHours = primaryLocation?.hours ?? [
+    { days: "Lunch", time: "12:00 PM – 3:30 PM" },
+    { days: "Dinner & Late Night", time: "6:30 PM – 2:00 AM" },
+  ]
+  const locationLabel = primaryLocation
+    ? `${primaryLocation.address}, ${primaryLocation.city}`
+    : "Katraj–Kondhwa, Pune"
+  const locationImage =
+    primaryLocation?.image || "/images/home/category-punjabi-mains.jpg"
 
   return (
     <>
@@ -154,88 +164,93 @@ export default function ContactPage() {
                     @baadalo_pe_rasoi
                   </a>
                 </div>
+                <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                  By sending a message or placing an order, you agree to our{" "}
+                  <Link
+                    href="/privacy-policy"
+                    className="font-medium text-accent hover:underline"
+                  >
+                    Privacy Policy
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    href="/terms-of-service"
+                    className="font-medium text-accent hover:underline"
+                  >
+                    Terms of Service
+                  </Link>
+                  . Refund and cancellation requests are processed by Zomato and
+                  Swiggy.
+                </p>
               </div>
 
-              <div className="mt-6 flex flex-col gap-4">
-                {locations.map((loc) => (
-                  <Link
-                    key={loc.slug}
-                    href={`/locations/${loc.slug}`}
-                    className="group rounded-lg border border-border bg-card p-6 transition-shadow hover:shadow-md"
-                  >
-                    <h3 className="font-serif text-lg font-bold text-card-foreground group-hover:text-accent">
-                      {loc.shortName}
-                    </h3>
-                    <div className="mt-3 flex flex-col gap-2">
-                      <div className="flex items-start gap-2">
-                        <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
-                        <span className="text-sm text-muted-foreground">
-                          {loc.address}, {loc.city}
+              <div className="mt-6 rounded-lg border border-border bg-card p-6">
+                <h3 className="font-serif text-lg font-bold text-card-foreground">
+                  Baadalo Pe Rasoi
+                </h3>
+                <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">
+                  Delivery-Only Cloud Kitchen
+                </p>
+                <div className="mt-4 flex flex-col gap-3">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
+                    <span className="text-sm text-muted-foreground">
+                      {locationLabel}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone className="size-4 shrink-0 text-accent" />
+                    <span className="text-sm text-muted-foreground">
+                      {siteConfig.phone}
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Clock className="mt-0.5 size-4 shrink-0 text-accent" />
+                    <div className="flex flex-col gap-0.5">
+                      {operatingHours.map((h) => (
+                        <span key={h.days} className="text-xs text-muted-foreground">
+                          {h.days}: {h.time}
                         </span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Phone className="size-4 shrink-0 text-accent" />
-                        <span className="text-sm text-muted-foreground">
-                          {loc.phone}
-                        </span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Clock className="mt-0.5 size-4 shrink-0 text-accent" />
-                        <div className="flex flex-col gap-0.5">
-                          {loc.hours.map((h) => (
-                            <span
-                              key={h.days}
-                              className="text-xs text-muted-foreground"
-                            >
-                              {h.days}: {h.time}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                      ))}
                     </div>
-                  </Link>
-                ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* Order Online */}
       <section className="bg-secondary py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeader
             label="Order Online"
             title="Find Us on Zomato & Swiggy"
-            description="We deliver across the Katraj–Kondhwa belt in Pune. Open for lunch, dinner, and late-night orders every day."
+            description="One kitchen, one promise: fresh vegetarian food delivered across Katraj–Kondhwa, Pune."
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {locations.map((loc) => (
-              <div
-                key={loc.slug}
-                className="relative overflow-hidden rounded-lg"
-              >
-                <div className="relative aspect-video overflow-hidden rounded-lg">
-                  <Image
-                    src={loc.image}
-                    alt={`Map area for ${loc.name}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-primary/60" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                    <MapPin className="mb-2 size-6 text-accent" />
-                    <h3 className="font-serif text-lg font-bold text-primary-foreground">
-                      {loc.shortName}
-                    </h3>
-                    <p className="mt-1 text-xs text-primary-foreground/70">
-                      {loc.address}
-                    </p>
-                  </div>
+          <div className="mx-auto mt-12 max-w-3xl">
+            <div className="relative overflow-hidden rounded-lg">
+              <div className="relative aspect-video overflow-hidden rounded-lg">
+                <Image
+                  src={locationImage}
+                  alt="Baadalo Pe Rasoi cloud kitchen delivery area"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 70vw"
+                />
+                <div className="absolute inset-0 bg-primary/60" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                  <MapPin className="mb-2 size-6 text-accent" />
+                  <h3 className="font-serif text-2xl font-bold text-primary-foreground">
+                    Baadalo Pe Rasoi
+                  </h3>
+                  <p className="mt-1 text-sm text-primary-foreground/80">
+                    Delivery across {locationLabel}
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
