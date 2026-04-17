@@ -11,7 +11,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero.jpg"
-          alt="Elegant restaurant interior with warm lighting"
+          alt="Top view of Indian curry, rice, and greens in takeaway containers"
           fill
           className="object-cover opacity-40"
           priority

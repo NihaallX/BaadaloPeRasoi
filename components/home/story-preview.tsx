@@ -16,7 +16,7 @@ export function StoryPreview() {
                 <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
                   <Image
                     src="/images/home/story-1.jpg"
-                    alt="Traditional home-style cooking in a Pune kitchen"
+                    alt="Home cook preparing a meal with fresh ingredients in a modern kitchen"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -25,7 +25,7 @@ export function StoryPreview() {
                 <div className="relative aspect-square overflow-hidden rounded-lg">
                   <Image
                     src="/images/home/story-2.jpg"
-                    alt="Indian spices and ingredients ready for cooking"
+                    alt="Fresh vegetables being sliced on a chopping board"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -36,7 +36,7 @@ export function StoryPreview() {
                 <div className="relative aspect-square overflow-hidden rounded-lg">
                   <Image
                     src="/images/home/story-3.jpg"
-                    alt="Freshly prepared Indian street-style snacks"
+                    alt="Cook slicing vegetables in a warm kitchen setting"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -45,7 +45,7 @@ export function StoryPreview() {
                 <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
                   <Image
                     src="/images/home/story-4.jpg"
-                    alt="Family sharing a comforting meal together"
+                    alt="Cozy kitchen counter with cooking pots and ingredients"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
