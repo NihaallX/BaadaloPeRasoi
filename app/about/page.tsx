@@ -73,7 +73,7 @@ export default function AboutPage() {
               </div>
               <div className="absolute -bottom-6 -right-6 rounded-lg bg-accent px-6 py-4">
                 <p className="font-serif text-3xl font-bold text-accent-foreground">
-                  2019
+                  2026
                 </p>
                 <p className="text-xs font-medium text-accent-foreground/80">
                   Founded
@@ -88,24 +88,15 @@ export default function AboutPage() {
               />
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Ananya Sharma grew up watching her mother cook for the whole
-                  neighbourhood in Katraj, Pune. Meals in their home were never
-                  just about food{"\u2014"}they were about belonging. The dal
-                  tadka simmering on the stove, the roti coming off the tawa
-                  piping hot, the smell of jeera toasting in ghee.
-                </p>
-                <p>
-                  When she noticed that the food delivery options around her
-                  offered everything except that warmth — pure vegetarian,
-                  home-style cooking made with real care — she decided to fill
-                  that gap herself. With a small kitchen and big heart, Baadalo
-                  Pe Rasoi was born.
-                </p>
-                <p>
-                  The name means &ldquo;Kitchen in the Clouds&rdquo; — a nod
-                  to the cloud kitchen model, but also to the dream of bringing
-                  comfort food to every doorstep, as if it had drifted down
-                  from above.
+                  Dhananjay Patil started Baadalo Pe Rasoi with a simple idea —
+                  to serve ghar jaisa, comforting food that feels special, even
+                  when you&apos;re ordering in. He wanted to create something of his
+                  own, something consistent and high quality. Operating out of
+                  the Katraj–Kondhwa belt of Pune, the kitchen was built to
+                  serve students, working professionals, and families who crave
+                  real home-style vegetarian food. The name &ldquo;Baadalo Pe
+                  Rasoi&rdquo; reflects that feeling — food so good it feels like
+                  it&apos;s made above the clouds.
                 </p>
               </div>
             </div>

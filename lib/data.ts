@@ -6,13 +6,13 @@ export const siteConfig = {
   name: "Baadalo Pe Rasoi",
   tagline: "Ghar Jaisa Khana, Delivered to Your Door",
   description:
-    "A pure vegetarian cloud kitchen serving home-style Punjabi meals, rice combos, snacks, and more — delivered across the Katraj–Kondhwa belt in Pune via Zomato and Swiggy.",
+    "A delivery-only cloud kitchen serving pure vegetarian, home-style meals across Katraj–Kondhwa, Pune via Zomato and Swiggy.",
   url: "https://baadalorasoi.com",
   ogImage: "/images/og-image.jpg",
-  email: "hello@baadalorasoi.com",
-  phone: "+91 98765 43210",
+  email: "Yet to be created",
+  phone: "+91 89834 06295",
   socials: {
-    instagram: "https://instagram.com/baadalorasoi",
+    instagram: "https://instagram.com/baadalo_pe_rasoi",
     facebook: "https://facebook.com/baadalorasoi",
     twitter: "https://twitter.com/baadalorasoi",
   },
@@ -26,31 +26,31 @@ export interface TimelineEvent {
 
 export const storyTimeline: TimelineEvent[] = [
   {
-    year: "2019",
+    year: "2026",
     title: "The Idea is Born",
     description:
       "Frustrated by the lack of truly home-style vegetarian food in Pune, our founder started cooking for neighbours out of a small home kitchen in Katraj — and the response was overwhelming.",
   },
   {
-    year: "2020",
+    year: "2027",
     title: "Going Online",
     description:
       "Baadalo Pe Rasoi officially launched on Zomato and Swiggy, making it easy for food lovers across Katraj and Kondhwa to order fresh, ghar jaisa khana from their phones.",
   },
   {
-    year: "2021",
+    year: "2028",
     title: "The Combos That Won Hearts",
     description:
       "Our student-favourite Rajma Chawal combo and the hearty Paneer Combo quickly became bestsellers, with thousands of happy orders every month.",
   },
   {
-    year: "2022",
+    year: "2029",
     title: "Late-Night Kitchen",
     description:
       "We extended our dinner service all the way to 2:00 AM, becoming the go-to choice for late-night hunger in the Katraj–Kondhwa belt.",
   },
   {
-    year: "2024",
+    year: "2031",
     title: "Growing the Menu",
     description:
       "We added momos, fresh juices, veg pizzas, and a rotating Dessert of the Day — expanding beyond meals to become a full cloud kitchen experience.",
@@ -66,40 +66,40 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Ananya Sharma",
-    role: "Founder & Head Chef",
-    bio: "Ananya grew up watching her mother cook for the entire neighbourhood in Pune. Her dream was simple — to bottle that warmth and deliver it to every doorstep.",
-    image: "/images/team/ananya.jpg",
+    name: "Dhananjay Patil",
+    role: "Founder & Rasoi Head",
+    bio: "Dhananjay grew up watching his mother cook for the entire neighbourhood in Pune. His dream was simple — to bottle that warmth and deliver it to every doorstep.",
+    image: "/images/team/dhananjay-patil.jpg",
   },
   {
     name: "Ravi Kulkarni",
-    role: "Kitchen Manager",
+    role: "Kitchen Operations Lead",
     bio: "Ravi keeps the cloud kitchen running like clockwork, ensuring every order — from a single roti to a full combo — reaches the customer fresh and on time.",
-    image: "/images/team/ravi.jpg",
+    image: "/images/team/ravi-kulkarni.jpg",
   },
   {
     name: "Priya Joshi",
-    role: "Punjabi Mains Specialist",
+    role: "Home-Style Recipes Lead",
     bio: "Priya mastered the art of dal tadka and paneer dishes in her family kitchen before bringing her recipes to Baadalo Pe Rasoi's most-loved menu section.",
-    image: "/images/team/priya.jpg",
+    image: "/images/team/priya-joshi.jpg",
   },
   {
     name: "Suresh Patil",
-    role: "Snacks & Fast Food Chef",
+    role: "Tawa & Snacks Specialist",
     bio: "From perfectly steamed momos to crispy fries, Suresh crafts every snack with a street-food spirit that keeps late-night customers coming back.",
-    image: "/images/team/suresh.jpg",
+    image: "/images/team/suresh-patil.jpg",
   },
   {
     name: "Meera Desai",
-    role: "Desserts & Beverages",
+    role: "Sweets & Beverage Counter",
     bio: "Meera is behind the Dessert of the Day and the fresh juice counter, bringing a sweet, refreshing close to every Baadalo Pe Rasoi meal.",
-    image: "/images/team/meera.jpg",
+    image: "/images/team/meera-desai.jpg",
   },
   {
     name: "Arjun Nair",
-    role: "Delivery & Operations",
+    role: "Dispatch & Delivery Ops",
     bio: "Arjun coordinates with Zomato and Swiggy partners to make sure every order is dispatched quickly and arrives at your door just the way it left our kitchen.",
-    image: "/images/team/arjun.jpg",
+    image: "/images/team/arjun-nair.jpg",
   },
 ]
 
@@ -136,9 +136,9 @@ export const locations: Location[] = [
     tagline: "Ghar Jaisa Swad",
     description:
       "Rich, comforting Punjabi curries and wholesome rice combos made fresh every day — just like your mother used to cook. Perfect for lunch or a hearty dinner, delivered hot to your door.",
-    address: "Katraj–Kondhwa Belt",
-    city: "Pune, Maharashtra",
-    phone: "+91 98765 43210",
+    address: "Katraj–Kondhwa",
+    city: "Pune",
+    phone: "+91 89834 06295",
     hours: [
       { days: "Lunch", time: "12:00 PM – 3:30 PM" },
       { days: "Dinner & Late Night", time: "6:30 PM – 2:00 AM" },
@@ -151,6 +151,10 @@ export const locations: Location[] = [
     ],
     features: [
       "Pure Vegetarian",
+      "Delivery-Only Cloud Kitchen",
+      "Freshly prepared, no compromise on quality",
+      "Perfect for late-night cravings",
+      "Daily dessert add-on (like Gulab Jamun)",
       "Delivery Only",
       "Available on Zomato",
       "Available on Swiggy",
@@ -180,6 +184,15 @@ export const locations: Location[] = [
         price: "130",
         category: "Punjabi Mains",
         tags: ["Vegan"],
+      },
+      {
+        name: "Dal Makhani",
+        description:
+          "Slow-cooked black lentils in a rich, creamy gravy for a deep homestyle flavour.",
+        price: "150",
+        category: "Punjabi Mains",
+        tags: ["Vegetarian", "Special Item"],
+        image: "/images/home/featured-dal-makhani.jpg",
       },
       {
         name: "Dal Tadka",
@@ -213,7 +226,25 @@ export const locations: Location[] = [
         price: "140",
         category: "Rice Meals",
         tags: ["Vegan"],
-        image: "/images/menu/tiramisu.jpg",
+        image: "/images/home/featured-rajma-chawal.jpg",
+      },
+      {
+        name: "Rajma Bowl",
+        description:
+          "Rajma in hearty gravy served over steamed rice — a classic comfort bowl.",
+        price: "140",
+        category: "Rice Bowls",
+        tags: ["Vegan", "Special Item"],
+        image: "/images/home/featured-rajma-chawal.jpg",
+      },
+      {
+        name: "Paneer Butter Masala Bowl",
+        description:
+          "Paneer butter masala served over fragrant rice for a rich and satisfying bowl meal.",
+        price: "160",
+        category: "Rice Bowls",
+        tags: ["Vegetarian", "Special Item"],
+        image: "/images/home/featured-paneer-butter-masala.jpg",
       },
       {
         name: "Jeera Rice",
@@ -232,9 +263,9 @@ export const locations: Location[] = [
     tagline: "Quick Bites, Big Flavours",
     description:
       "From perfectly steamed momos to crispy fries, fresh sandwiches to veg pizzas — our snack and fast food menu is ideal for quick hunger fixes, late-night cravings, and everything in between.",
-    address: "Katraj–Kondhwa Belt",
-    city: "Pune, Maharashtra",
-    phone: "+91 98765 43210",
+    address: "Katraj–Kondhwa",
+    city: "Pune",
+    phone: "+91 89834 06295",
     hours: [
       { days: "Lunch", time: "12:00 PM – 3:30 PM" },
       { days: "Dinner & Late Night", time: "6:30 PM – 2:00 AM" },
@@ -247,6 +278,10 @@ export const locations: Location[] = [
     ],
     features: [
       "Pure Vegetarian",
+      "Delivery-Only Cloud Kitchen",
+      "Freshly prepared, no compromise on quality",
+      "Perfect for late-night cravings",
+      "Daily dessert add-on (like Gulab Jamun)",
       "Delivery Only",
       "Available on Zomato",
       "Available on Swiggy",
@@ -320,9 +355,9 @@ export const locations: Location[] = [
     tagline: "Best Value, Best Taste",
     description:
       "Our combo meals are designed to give you the most satisfying, value-for-money experience. Pair your favourite main with the perfect side — and finish with our Dessert of the Day.",
-    address: "Katraj–Kondhwa Belt",
-    city: "Pune, Maharashtra",
-    phone: "+91 98765 43210",
+    address: "Katraj–Kondhwa",
+    city: "Pune",
+    phone: "+91 89834 06295",
     hours: [
       { days: "Lunch", time: "12:00 PM – 3:30 PM" },
       { days: "Dinner & Late Night", time: "6:30 PM – 2:00 AM" },
@@ -335,6 +370,10 @@ export const locations: Location[] = [
     ],
     features: [
       "Pure Vegetarian",
+      "Delivery-Only Cloud Kitchen",
+      "Freshly prepared, no compromise on quality",
+      "Perfect for late-night cravings",
+      "Daily dessert add-on (like Gulab Jamun)",
       "Delivery Only",
       "Available on Zomato",
       "Available on Swiggy",
@@ -405,30 +444,23 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "The Paneer Butter Masala is exactly how my maa makes it. I order the Paneer Combo at least three times a week — it never disappoints.",
+      "Ghar jaisa taste, really loved the dal!",
     author: "Rohit S.",
-    location: "Kondhwa",
+    location: "Katraj–Kondhwa",
     rating: 5,
   },
   {
     quote:
-      "As a student living alone in Katraj, Baadalo Pe Rasoi has been a lifesaver. The Student Combo is filling, delicious, and super affordable.",
+      "Affordable meals with amazing quality. Perfect for students!",
     author: "Sneha P.",
-    location: "Katraj",
+    location: "Katraj–Kondhwa",
     rating: 5,
   },
   {
     quote:
-      "They deliver until 2 AM! That alone makes them the best cloud kitchen in Pune. The fried momos and coffee combo is my go-to after late-night study sessions.",
+      "Delivery was quick, and the food felt freshly made. Will order again!",
     author: "Aditya K.",
-    location: "Kondhwa",
-    rating: 5,
-  },
-  {
-    quote:
-      "Pure veg, home-style, and always fresh. The Dal Tadka tastes like it was cooked with love. So happy to have found this gem on Swiggy.",
-    author: "Meenakshi T.",
-    location: "Katraj",
+    location: "Katraj–Kondhwa",
     rating: 5,
   },
 ]
