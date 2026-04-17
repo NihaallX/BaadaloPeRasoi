@@ -51,6 +51,11 @@ export default async function LocationDetailPage({
   if (!location) notFound()
 
   const categories = [...new Set(location.menu.map((item) => item.category))]
+  const relatedMenuPreviewImages: Record<string, string> = {
+    "punjabi-mains": "/images/home/category-punjabi-mains.jpg",
+    "snacks-and-fast-food": "/images/home/category-snacks-fast-food.jpg",
+    "combos-and-desserts": "/images/home/category-combos-desserts-premium.jpg",
+  }
 
   return (
     <>
@@ -76,7 +81,7 @@ export default async function LocationDetailPage({
           >
             <Link href="/locations">
               <ArrowLeft className="size-4" />
-              All Locations
+              All Menus
             </Link>
           </Button>
           <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
@@ -189,12 +194,12 @@ export default async function LocationDetailPage({
         </div>
       </section>
 
-      {/* Other Locations */}
+      {/* Other Menus */}
       <section className="bg-secondary py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeader
             label="Explore More"
-            title="Our Other Locations"
+            title="Our Other Menus"
           />
           <div className="mt-14 grid gap-8 md:grid-cols-2">
             {locations
@@ -207,7 +212,7 @@ export default async function LocationDetailPage({
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
-                      src={loc.image}
+                      src={relatedMenuPreviewImages[loc.slug] || loc.image}
                       alt={loc.name}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -222,7 +227,7 @@ export default async function LocationDetailPage({
                         {loc.name}
                       </h3>
                       <div className="mt-2 flex items-center gap-2 text-sm text-primary-foreground/80">
-                        View Location
+                        View Menu
                         <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
