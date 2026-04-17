@@ -64,8 +64,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
                 <Image
-                  src="/images/story-origin.jpg"
-                  alt="Young Maria Rossi learning to cook with her grandmother in Italy"
+                  src="/images/home/story-2.jpg"
+                  alt="Fresh ingredients in the early Baadalo Pe Rasoi home kitchen"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -118,26 +118,29 @@ export default function AboutPage() {
                 title: "Pure Vegetarian",
                 description:
                   "We are a 100% pure vegetarian kitchen. No compromise, no cross-contamination. Every ingredient is carefully chosen so you can order with full peace of mind.",
-                image: "/images/philosophy-1.jpg",
+                image: "/images/about/belief-pure-vegetarian.jpg",
+                alt: "Nutritious vegetarian curry served with rice and fresh herbs",
               },
               {
                 title: "Ghar Jaisa Swad",
                 description:
                   "Our recipes are inspired by home kitchens, not restaurants. We cook the way mothers do — with patience, fresh ingredients, and a generous hand.",
-                image: "/images/philosophy-2.jpg",
+                image: "/images/about/belief-ghar-jaisa-swad.jpg",
+                alt: "Home cook preparing a meal with fresh ingredients in a kitchen",
               },
               {
                 title: "Delivered Fresh",
                 description:
                   "We cook to order. No batch-cooked, reheated food. When your order arrives, it is fresh from the kitchen — hot, aromatic, and ready to eat.",
-                image: "/images/philosophy-3.jpg",
+                image: "/images/about/belief-delivered-fresh.jpg",
+                alt: "Food delivery rider carrying a fresh-order backpack in the city",
               },
             ].map((item) => (
               <div key={item.title} className="group">
                 <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={item.alt}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
