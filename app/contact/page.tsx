@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -30,6 +30,8 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
+  const hasEmail = siteConfig.email.includes("@")
+
   return (
     <>
       {/* Hero */}
@@ -43,7 +45,7 @@ export default function ContactPage() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
             Have feedback, a bulk order enquiry, or just want to say hello?
-            Drop us a message and we will get back to you soon.
+            We are a delivery-only cloud kitchen serving Katraj–Kondhwa, Pune.
           </p>
         </div>
       </section>
@@ -128,12 +130,28 @@ export default function ContactPage() {
                     <Phone className="size-4 shrink-0 text-accent" />
                     {siteConfig.phone}
                   </a>
+                  {hasEmail ? (
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-accent"
+                    >
+                      <Mail className="size-4 shrink-0 text-accent" />
+                      {siteConfig.email}
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                      <Mail className="size-4 shrink-0 text-accent" />
+                      Email: Yet to be created
+                    </div>
+                  )}
                   <a
-                    href={`mailto:${siteConfig.email}`}
+                    href={siteConfig.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-accent"
                   >
-                    <Mail className="size-4 shrink-0 text-accent" />
-                    {siteConfig.email}
+                    <Instagram className="size-4 shrink-0 text-accent" />
+                    @baadalo_pe_rasoi
                   </a>
                 </div>
               </div>

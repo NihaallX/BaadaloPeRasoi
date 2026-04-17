@@ -26,6 +26,17 @@ export function CtaSection() {
           Whether it is a quick lunch, a family dinner, or a late-night craving
           — Baadalo Pe Rasoi delivers fresh, home-style vegetarian food to your door.
         </p>
+        <div className="mt-8 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
+          <p className="rounded-full border border-border bg-secondary px-4 py-2">
+            Freshly prepared, no compromise on quality
+          </p>
+          <p className="rounded-full border border-border bg-secondary px-4 py-2">
+            Perfect for late-night cravings
+          </p>
+          <p className="rounded-full border border-border bg-secondary px-4 py-2">
+            Daily dessert add-on (like Gulab Jamun)
+          </p>
+        </div>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             asChild
