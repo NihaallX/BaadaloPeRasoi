@@ -15,8 +15,8 @@ export function StoryPreview() {
               <div className="space-y-4">
                 <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
                   <Image
-                    src="/images/story-1.jpg"
-                    alt="Chef Maria preparing a signature dish"
+                    src="/images/home/story-1.jpg"
+                    alt="Traditional home-style cooking in a Pune kitchen"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -24,8 +24,8 @@ export function StoryPreview() {
                 </div>
                 <div className="relative aspect-square overflow-hidden rounded-lg">
                   <Image
-                    src="/images/story-2.jpg"
-                    alt="Fresh ingredients from local farms"
+                    src="/images/home/story-2.jpg"
+                    alt="Indian spices and ingredients ready for cooking"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -35,8 +35,8 @@ export function StoryPreview() {
               <div className="mt-8 space-y-4">
                 <div className="relative aspect-square overflow-hidden rounded-lg">
                   <Image
-                    src="/images/story-3.jpg"
-                    alt="The original Hearth dining room"
+                    src="/images/home/story-3.jpg"
+                    alt="Freshly prepared Indian street-style snacks"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -44,8 +44,8 @@ export function StoryPreview() {
                 </div>
                 <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
                   <Image
-                    src="/images/story-4.jpg"
-                    alt="Family gathering at The Hearth"
+                    src="/images/home/story-4.jpg"
+                    alt="Family sharing a comforting meal together"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"

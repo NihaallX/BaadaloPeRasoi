@@ -6,11 +6,26 @@ import { Badge } from "@/components/ui/badge"
 import { SectionHeader } from "@/components/section-header"
 import { locations } from "@/lib/data"
 
-// Pull one featured dish from each location
+// Highlight owner-requested special items.
 const featuredDishes = [
-  { ...locations[0].menu.find((m) => m.name === "Paneer Butter Masala")!, locationSlug: "punjabi-mains", locationName: "Punjabi Mains" },
-  { ...locations[1].menu.find((m) => m.name === "Fried Momos")!, locationSlug: "snacks-and-fast-food", locationName: "Snacks & Fast Food" },
-  { ...locations[2].menu.find((m) => m.name === "Paneer Combo")!, locationSlug: "combos-and-desserts", locationName: "Combos & Desserts" },
+  {
+    ...locations[0].menu.find((m) => m.name === "Dal Makhani")!,
+    image: "/images/home/featured-dal-makhani.jpg",
+    locationSlug: "punjabi-mains",
+    locationName: "Special Item",
+  },
+  {
+    ...locations[0].menu.find((m) => m.name === "Rajma Chawal")!,
+    image: "/images/home/featured-rajma-chawal.jpg",
+    locationSlug: "punjabi-mains",
+    locationName: "Special Item",
+  },
+  {
+    ...locations[0].menu.find((m) => m.name === "Paneer Butter Masala")!,
+    image: "/images/home/featured-paneer-butter-masala.jpg",
+    locationSlug: "punjabi-mains",
+    locationName: "Special Item",
+  },
 ]
 
 export function FeaturedDishes() {
@@ -18,9 +33,9 @@ export function FeaturedDishes() {
     <section className="bg-secondary py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <SectionHeader
-          label="From Our Kitchen"
-          title="Signature Dishes"
-          description="From rich Punjabi curries to crispy snacks and value-packed combos — here are the dishes our customers love most."
+          label="Special Items"
+          title="Most Loved This Week"
+          description="Handpicked owner specials that keep customers coming back for one more order."
         />
 
         <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -53,7 +68,7 @@ export function FeaturedDishes() {
                     {dish.description}
                   </p>
                   <p className="mt-3 text-lg font-semibold text-accent">
-                    ${dish.price}
+                    ₹{dish.price}
                   </p>
                 </div>
               </div>

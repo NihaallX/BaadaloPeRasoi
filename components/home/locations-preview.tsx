@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button"
 import { SectionHeader } from "@/components/section-header"
 import { locations } from "@/lib/data"
 
+const categoryPreviewImages: Record<string, string> = {
+  "punjabi-mains": "/images/home/category-punjabi-mains.jpg",
+  "snacks-and-fast-food": "/images/home/category-snacks-fast-food.jpg",
+  "combos-and-desserts": "/images/home/category-combos-desserts.jpg",
+}
+
 export function LocationsPreview() {
   return (
     <section className="bg-background py-20 lg:py-28">
@@ -24,7 +30,7 @@ export function LocationsPreview() {
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
-                  src={location.image}
+                  src={categoryPreviewImages[location.slug] || location.image}
                   alt={location.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

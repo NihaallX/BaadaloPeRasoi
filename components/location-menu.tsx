@@ -45,24 +45,22 @@ export function LocationMenu({ menu, categories }: LocationMenuProps) {
             key={item.name}
             className="group flex gap-4 rounded-lg border border-border bg-card p-5 transition-shadow hover:shadow-md"
           >
-            {item.image && (
-              <div className="relative size-20 shrink-0 overflow-hidden rounded-md md:size-24">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-            )}
+            <div className="relative size-20 shrink-0 overflow-hidden rounded-md md:size-24">
+              <Image
+                src={item.image || "/images/menu/default.jpg"}
+                alt={item.name}
+                fill
+                className="object-cover"
+                sizes="96px"
+              />
+            </div>
             <div className="flex flex-1 flex-col">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="font-serif text-lg font-bold text-card-foreground">
                   {item.name}
                 </h3>
                 <span className="shrink-0 text-lg font-semibold text-accent">
-                  ${item.price}
+                  ₹{item.price}
                 </span>
               </div>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

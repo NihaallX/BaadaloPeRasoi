@@ -34,8 +34,8 @@ export default function MenuPage() {
       <section className="relative flex min-h-[40vh] items-center overflow-hidden bg-primary">
         <div className="absolute inset-0">
           <Image
-            src="/images/menu-hero.jpg"
-            alt="Beautifully plated dishes from The Hearth"
+            src="/images/home/category-punjabi-mains.jpg"
+            alt="Paneer curry in a traditional pan with fresh ingredients"
             fill
             className="object-cover opacity-30"
             priority
@@ -115,24 +115,22 @@ export default function MenuPage() {
                           key={item.name}
                           className="flex gap-4 rounded-lg border border-border bg-card p-4 transition-shadow hover:shadow-sm"
                         >
-                          {item.image && (
-                            <div className="relative size-16 shrink-0 overflow-hidden rounded-md">
-                              <Image
-                                src={item.image}
-                                alt={item.name}
-                                fill
-                                className="object-cover"
-                                sizes="64px"
-                              />
-                            </div>
-                          )}
+                          <div className="relative size-16 shrink-0 overflow-hidden rounded-md">
+                            <Image
+                              src={item.image || "/images/menu/default.jpg"}
+                              alt={item.name}
+                              fill
+                              className="object-cover"
+                              sizes="64px"
+                            />
+                          </div>
                           <div className="flex flex-1 flex-col">
                             <div className="flex items-start justify-between gap-3">
                               <h4 className="font-serif text-base font-bold text-card-foreground">
                                 {item.name}
                               </h4>
                               <span className="shrink-0 font-semibold text-accent">
-                                ${item.price}
+                                ₹{item.price}
                               </span>
                             </div>
                             <p className="mt-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">
