@@ -43,9 +43,12 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Our Story
-          </p>
+          {/* Label pill — dark bg for legibility over any hero image */}
+          <div className="mb-4 inline-flex items-center rounded-full bg-black/60 px-4 py-1.5 backdrop-blur-sm">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
+              Our Story
+            </span>
+          </div>
           <h1 className="max-w-3xl font-serif text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
             A Kitchen in the Clouds, Rooted in Home
           </h1>
@@ -60,6 +63,21 @@ export default function AboutPage() {
       {/* The Origin */}
       <section className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          {/* Fact-dense lead — parsed first by AI answer engines and search snippets */}
+          <div className="mb-14 rounded-lg border border-border bg-secondary px-6 py-5">
+            <p className="text-base leading-relaxed text-foreground">
+              <strong>Baadalo Pe Rasoi</strong> is a 100% pure vegetarian,
+              delivery-only cloud kitchen founded by{" "}
+              <strong>Dhananjay Patil</strong> in <strong>2026</strong>,
+              operating out of the <strong>Katraj–Kondhwa belt, Pune</strong>.
+              The kitchen serves home-style Punjabi meals, snacks, fast food,
+              and combo offers — available for order on{" "}
+              <strong>Zomato</strong> and <strong>Swiggy</strong> during Lunch
+              (12:00 PM – 3:30 PM) and Dinner &amp; Late Night (6:30 PM – 2:00
+              AM).
+            </p>
+          </div>
+
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg">

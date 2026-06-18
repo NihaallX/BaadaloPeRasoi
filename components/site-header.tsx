@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -17,6 +18,31 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ]
 
+function BrandLogo({ className }: { className?: string }) {
+  return (
+    <span className={cn("relative inline-flex items-center", className)}>
+      {/* Pink logo — shown on light backgrounds */}
+      <Image
+        src="/logo-pink.svg"
+        alt="Baadalo Pe Rasoi"
+        width={140}
+        height={60}
+        className="block dark:hidden object-contain"
+        priority
+      />
+      {/* Yellow logo — shown on dark backgrounds */}
+      <Image
+        src="/logo-yellow.svg"
+        alt="Baadalo Pe Rasoi"
+        width={140}
+        height={60}
+        className="hidden dark:block object-contain"
+        priority
+      />
+    </span>
+  )
+}
+
 export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
@@ -26,9 +52,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-serif text-2xl font-bold tracking-tight text-foreground">
-            {siteConfig.name}
-          </span>
+          <BrandLogo />
         </Link>
 
         {/* Desktop Nav */}
@@ -75,10 +99,10 @@ export function SiteHeader() {
             <div className="flex flex-col gap-6 pt-6">
               <Link
                 href="/"
-                className="font-serif text-2xl font-bold"
+                className="flex items-center"
                 onClick={() => setOpen(false)}
               >
-                {siteConfig.name}
+                <BrandLogo />
               </Link>
               <nav className="flex flex-col gap-1">
                 {navigation.map((item) => (

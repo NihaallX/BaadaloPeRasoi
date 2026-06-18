@@ -27,9 +27,70 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/menu` },
 }
 
+// ── Menu JSON-LD ─────────────────────────────────────────────────────────────
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  name: "Baadalo Pe Rasoi Menu",
+  description:
+    "Pure vegetarian home-style menu — Punjabi mains, snacks, fast food, combos, and desserts.",
+  url: "https://baadalorasoi.com/menu",
+  hasMenuSection: [
+    {
+      "@type": "MenuSection",
+      name: "Punjabi Mains & Rice Meals",
+      description:
+        "Rich Punjabi curries and wholesome rice combos cooked fresh every day.",
+      hasMenuItem: [
+        { "@type": "MenuItem", name: "Paneer Butter Masala", offers: { "@type": "Offer", price: "160", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Kadhai Paneer", offers: { "@type": "Offer", price: "160", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Chole Masala", offers: { "@type": "Offer", price: "130", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Dal Makhani", offers: { "@type": "Offer", price: "150", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Dal Tadka", offers: { "@type": "Offer", price: "110", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Mix Veg", offers: { "@type": "Offer", price: "130", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Dal Rice", offers: { "@type": "Offer", price: "120", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Rajma Chawal", offers: { "@type": "Offer", price: "140", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Jeera Rice", offers: { "@type": "Offer", price: "80", priceCurrency: "INR" } },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Snacks, Fast Food & Beverages",
+      description: "Momos, sandwiches, fries, veg pizza, coffee, and fresh juices.",
+      hasMenuItem: [
+        { "@type": "MenuItem", name: "Steamed Momos", offers: { "@type": "Offer", price: "100", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Fried Momos", offers: { "@type": "Offer", price: "110", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Veg Sandwich", offers: { "@type": "Offer", price: "80", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Fries", offers: { "@type": "Offer", price: "70", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Veg Pizza", offers: { "@type": "Offer", price: "180", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Coffee", offers: { "@type": "Offer", price: "60", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Fresh Juice", offers: { "@type": "Offer", price: "70", priceCurrency: "INR" } },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Combo Offers & Desserts",
+      description: "Value combo meals and rotating Dessert of the Day.",
+      hasMenuItem: [
+        { "@type": "MenuItem", name: "Paneer Combo", description: "Paneer Butter Masala + 2 Butter Roti + Jeera Rice", offers: { "@type": "Offer", price: "260", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Student Combo", description: "Rajma Chawal + Fries", offers: { "@type": "Offer", price: "180", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Dal Combo", description: "Dal Tadka + Jeera Rice", offers: { "@type": "Offer", price: "160", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Snack Combo", description: "Momos + Coffee", offers: { "@type": "Offer", price: "150", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Gulab Jamun", offers: { "@type": "Offer", price: "60", priceCurrency: "INR" } },
+        { "@type": "MenuItem", name: "Seasonal Sweet", offers: { "@type": "Offer", price: "50", priceCurrency: "INR" } },
+      ],
+    },
+  ],
+}
+
 export default function MenuPage() {
   return (
     <>
+      {/* Menu JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }}
+      />
       {/* Hero */}
       <section className="relative flex min-h-[40vh] items-center overflow-hidden bg-primary">
         <div className="absolute inset-0">
@@ -44,9 +105,11 @@ export default function MenuPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Our Menu
-          </p>
+          <div className="mb-4 inline-flex items-center rounded-full bg-black/60 px-4 py-1.5 backdrop-blur-sm">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
+              Our Menu
+            </span>
+          </div>
           <h1 className="max-w-3xl font-serif text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
             Pure Veg, Pure Comfort
           </h1>

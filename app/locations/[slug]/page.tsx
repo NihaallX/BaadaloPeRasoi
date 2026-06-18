@@ -27,14 +27,14 @@ export async function generateMetadata({
     title: location.name,
     description: location.description,
     openGraph: {
-      title: `${location.name} | The Hearth`,
+      title: `${location.name} | Baadalo Pe Rasoi`,
       description: location.description,
       url: `${siteConfig.url}/locations/${location.slug}`,
       images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${location.name} | The Hearth`,
+      title: `${location.name} | Baadalo Pe Rasoi`,
       description: location.description,
     },
     alternates: { canonical: `${siteConfig.url}/locations/${location.slug}` },
@@ -84,9 +84,12 @@ export default async function LocationDetailPage({
               All Menus
             </Link>
           </Button>
-          <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
-            {location.tagline}
-          </Badge>
+          {/* Badge — dark bg ensures legibility over any hero image */}
+          <div className="mb-4 inline-flex items-center rounded-full bg-black/60 px-4 py-1.5 backdrop-blur-sm">
+            <span className="text-xs font-semibold uppercase tracking-wider text-white">
+              {location.tagline}
+            </span>
+          </div>
           <h1 className="max-w-3xl font-serif text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
             {location.name}
           </h1>

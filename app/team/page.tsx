@@ -43,9 +43,11 @@ export default function TeamPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            The Team
-          </p>
+          <div className="mb-4 inline-flex items-center rounded-full bg-black/60 px-4 py-1.5 backdrop-blur-sm">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
+              The Team
+            </span>
+          </div>
           <h1 className="max-w-3xl font-serif text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
             The People Behind the Plates
           </h1>

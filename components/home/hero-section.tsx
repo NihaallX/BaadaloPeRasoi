@@ -21,26 +21,33 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 lg:px-8">
-        <div className="max-w-3xl">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-            Pure Veg &middot; Delivery Only &middot; Pune
-          </p>
-          <h1 className="font-serif text-5xl font-bold leading-[1.1] tracking-tight text-primary-foreground md:text-7xl lg:text-8xl">
-            {siteConfig.name.split(" ").map((word, i) => (
-              <span key={i} className="block">
-                {word === "Rasoi" ? (
-                  <span className="italic">{word}</span>
-                ) : (
-                  word
-                )}
-              </span>
-            ))}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 pb-24 lg:px-8">
+        <div className="flex flex-col items-center text-center">
+          {/* SEO H1 — visually hidden, logo image serves as visible brand treatment */}
+          <h1 className="sr-only">
+            Baadalo Pe Rasoi — Pure Vegetarian Cloud Kitchen in Pune
           </h1>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+          {/* Tagline pill */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-black/60 px-4 py-2 backdrop-blur-sm">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
+              Pure Veg &middot; Delivery Only &middot; Pune
+            </span>
+          </div>
+          {/* Brand logo — yellow variant, centered */}
+          <div className="mb-5">
+            <Image
+              src="/logo-yellow.svg"
+              alt="Baadalo Pe Rasoi"
+              width={300}
+              height={128}
+              className="object-contain"
+              priority
+            />
+          </div>
+          <p className="max-w-lg text-base leading-relaxed text-primary-foreground/80 md:text-lg">
             {siteConfig.tagline}. {siteConfig.description.split(".")[0]}.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button
               asChild
               size="lg"
@@ -64,12 +71,12 @@ export function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs uppercase tracking-widest text-primary-foreground/40">
+      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-1.5">
+          <span className="text-[10px] uppercase tracking-widest text-primary-foreground/40">
             Scroll
           </span>
-          <div className="h-10 w-px bg-gradient-to-b from-primary-foreground/40 to-transparent" />
+          <div className="h-7 w-px bg-gradient-to-b from-primary-foreground/40 to-transparent" />
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig, locations } from "@/lib/data"
@@ -12,8 +13,15 @@ export function SiteFooter() {
         <div className="grid gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.6fr)_minmax(0,1.2fr)] lg:gap-x-8 lg:gap-y-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="font-serif text-2xl font-bold">
-              {siteConfig.name}
+            <Link href="/" className="inline-block">
+              {/* Yellow logo on the dark footer background */}
+              <Image
+                src="/logo-yellow.svg"
+                alt={siteConfig.name}
+                width={200}
+                height={85}
+                className="mb-4 object-contain"
+              />
             </Link>
             <p className="mt-3 text-sm leading-relaxed opacity-80">
               {siteConfig.description}

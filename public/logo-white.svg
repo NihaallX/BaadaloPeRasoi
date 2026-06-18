@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #000;
+      }
+
+      .cls-4, .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: McDonutsDemoRegular, 'Mc Donuts Demo';
+        font-size: 59.2px;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(176.15 294.66)"><tspan x="0" y="0">Pe</tspan></text>
+  <text class="cls-2" transform="translate(166.33 240.27)"><tspan x="0" y="0">adalo</tspan></text>
+  <path class="cls-1" d="M351.86,196.01c-17.54,6.46-12.86,20.71-12.86,20.71-8.57-3.57-15,6.43-15,6.43-2.86,12.86,10,17.85,10,17.85l62.14.71s17.14-3.57,14.28-14.28c-2.86-10.71-12.14-12.14-12.14-12.14,0,0-1.83-7.03-6.43-10.71-3.57-2.86-10.71-7.14-17.85,2.14,0,0-8.57-15.71-22.14-10.71Z"/>
+  <text class="cls-3" transform="translate(259.89 295.1)"><tspan class="cls-5" x="0" y="0">R</tspan><tspan class="cls-4" x="45.26" y="0">asoi</tspan></text>
+  <text class="cls-2" transform="translate(84.79 242.61)"><tspan x="0" y="0">Ba</tspan></text>
+</svg>

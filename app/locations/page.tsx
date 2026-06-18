@@ -33,9 +33,11 @@ export default function LocationsPage() {
       {/* Hero */}
       <section className="bg-primary py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Our Locations
-          </p>
+          <div className="mb-4 inline-flex items-center rounded-full bg-white/10 px-4 py-1.5 backdrop-blur-sm">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
+              Our Locations
+            </span>
+          </div>
           <h1 className="max-w-3xl font-serif text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
             Three Categories, One Kitchen
           </h1>
