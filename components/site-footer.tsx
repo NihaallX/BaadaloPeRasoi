@@ -16,7 +16,7 @@ export function SiteFooter() {
             <Link href="/" className="inline-block">
               {/* Yellow logo on the dark footer background */}
               <Image
-                src="/logo-yellow.svg"
+                src="/logo-yellow.png"
                 alt={siteConfig.name}
                 width={200}
                 height={85}

@@ -23,7 +23,7 @@ function BrandLogo({ className }: { className?: string }) {
     <span className={cn("relative inline-flex items-center", className)}>
       {/* Pink logo — shown on light backgrounds */}
       <Image
-        src="/logo-pink.svg"
+        src="/logo-pink.png"
         alt="Baadalo Pe Rasoi"
         width={140}
         height={60}
@@ -32,7 +32,7 @@ function BrandLogo({ className }: { className?: string }) {
       />
       {/* Yellow logo — shown on dark backgrounds */}
       <Image
-        src="/logo-yellow.svg"
+        src="/logo-yellow.png"
         alt="Baadalo Pe Rasoi"
         width={140}
         height={60}

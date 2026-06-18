@@ -36,7 +36,7 @@ export function HeroSection() {
           {/* Brand logo — yellow variant, centered */}
           <div className="mb-5">
             <Image
-              src="/logo-yellow.svg"
+              src="/logo-yellow.png"
               alt="Baadalo Pe Rasoi"
               width={300}
               height={128}
